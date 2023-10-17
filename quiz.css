@@ -1,3 +1,7 @@
+:root{
+   --clr-1:#00ccff;
+   --clr-2:#d500f9;
+}
 body{
     background-color: #101430;
     color: white;
@@ -19,7 +23,7 @@ form#quiz div{
    content: ' ';
    position: absolute;
   
-   background:linear-gradient(#00ccff,#d500f9);
+   background:linear-gradient(var(--clr-1),var(--clr-2));
    width: 170px;
    height: 160%;
    animation: rotate 4s linear infinite;
