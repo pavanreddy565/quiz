@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+            --clr-1:#052b2f;
+            --clr-2:#073438;
+            --clr-3:#0e4b50;
+            --clr-4:#2d8f85;
+            --clr-5:#637c54;
+        }
+        body{
+            background-color: var(--clr-2);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .card{
+            height:60vh;
+            aspect-ratio: 1/1.5;
+            background-color: var(--clr-1);
+            border-radius: 0.5rem;
+            position: relative;
+        }.card::before,
+        .card::after{
+            content: '';
+            position: absolute;
+            inset: -.5rem;
+        
+            z-index: -1;
+            border-radius: inherit;
+            background: conic-gradient(from 0deg,var(--clr-3),var(--clr-4),var(--clr-5));
+            animation: rotation 20s linear infinite;
+        }
+        .card::after{
+            filter:blur(2.5rem);
+        }
+        @property --gradient-angle{
+            syntax: "<angle>";
+            initial-value: 0deg;
+            inherits: false;
+        }@keyframes rotation{
+            0%{--gradient-angle:0deg}
+            100%{--gradient-angle:360deg}
+        }
+    </style>
+</head>
+<body>
+    <div class="card"></div>
+</body>
+</html>
